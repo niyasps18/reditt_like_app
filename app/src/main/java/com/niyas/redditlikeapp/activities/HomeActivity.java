@@ -1,31 +1,43 @@
 package com.niyas.redditlikeapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.widget.TextView;
 
 import com.niyas.redditlikeapp.R;
 
-public class HomeActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+public class HomeActivity extends BaseActivity {
+    @BindView(R.id.toolbar)
+    android.support.v7.widget.Toolbar toolbar;
+    @BindView(R.id.fab)
+    FloatingActionButton fab;
+    @BindView(R.id.page_header_txt_view)
+    TextView pageHeaderTextView;
+    @BindView(R.id.post_txt_view)
+    TextView postTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        unbinder = ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+//        getSupportActionBar().setHomeButtonEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        pageHeaderTextView.setText("Reddit Home");
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
     }
 
+
+    @OnClick(R.id.fab)
+    public void onFabClicked(){
+        Intent intent = new Intent(this, RedditMakePostActivity.class);
+        startActivity(intent);
+    }
 }
