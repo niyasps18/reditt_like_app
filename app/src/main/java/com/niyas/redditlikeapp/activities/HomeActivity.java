@@ -43,6 +43,7 @@ public class HomeActivity extends BaseActivity {
         linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         postsRecyclerView.setLayoutManager(linearLayoutManager);
         postsRecyclerView.setAdapter(redditPostsRecyclerViewAdapter);
+        redditPostsRecyclerViewAdapter.updateDataSet(RedditPostDataHelper.getSharedInstance().populateInitialListData(this));
         manageNoPostsLabel();
 
     }

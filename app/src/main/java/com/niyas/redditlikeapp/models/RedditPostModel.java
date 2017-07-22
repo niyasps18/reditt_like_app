@@ -31,15 +31,15 @@ public class RedditPostModel implements Serializable {
         this.downVotes = downVotes;
     }
 
-    public boolean isLastAnUpVote() {
+    public Boolean isLastAnUpVote() {
         return isLastAnUpVote;
     }
 
-    public void setLastAnUpVote(boolean lastAnUpVote) {
+    public void setLastAnUpVote(Boolean lastAnUpVote) {
         isLastAnUpVote = lastAnUpVote;
     }
 
-    private boolean isLastAnUpVote = true;
+    private Boolean isLastAnUpVote = null;
 
     public String getTitle() {
         return title;

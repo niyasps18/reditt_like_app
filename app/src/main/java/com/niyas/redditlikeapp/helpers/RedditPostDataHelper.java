@@ -1,10 +1,14 @@
 package com.niyas.redditlikeapp.helpers;
 
+import android.content.Context;
+
+import com.niyas.redditlikeapp.R;
 import com.niyas.redditlikeapp.models.RedditPostModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 
 /**
  * Created by Niyas Sajjad on 20-Jul-17.
@@ -43,6 +47,7 @@ public class RedditPostDataHelper {
     public void downVoted(int position) {
         redditPostArrayList.get(position).setLastAnUpVote(false);
         redditPostArrayList.get(position).setDownVotes(redditPostArrayList.get(position).getDownVotes() + 1);
+        //comment this if number of upvotes need not to be reduced as the user down votes
         if (redditPostArrayList.get(position).getUpVotes() > 0) {
             redditPostArrayList.get(position).setUpVotes(redditPostArrayList.get(position).getUpVotes() - 1);
         }
@@ -64,5 +69,18 @@ public class RedditPostDataHelper {
                 }
             }
         });
+    }
+
+    public ArrayList<RedditPostModel> populateInitialListData(Context context){
+        for(int i = 0 ;i<10; i++){
+            RedditPostModel redditPostModel = new RedditPostModel();
+            redditPostModel.setPostBody(context.getResources().getStringArray(R.array.initial_list_body_data)[i]);
+            redditPostModel.setUpVotes(0);
+            redditPostModel.setDownVotes(0);
+            redditPostModel.setDate(new Date());
+            redditPostArrayList.add(redditPostModel);
+        }
+
+        return redditPostArrayList;
     }
 }

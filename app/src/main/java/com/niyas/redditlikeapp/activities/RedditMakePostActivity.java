@@ -48,6 +48,7 @@ public class RedditMakePostActivity extends BaseActivity {
         redditPostModel.setTitle(titleEditText.getText().toString().trim());
         redditPostModel.setPostBody(bodyEditText.getText().toString().trim());
         redditPostModel.setDate(new Date());
+        redditPostModel.setLastAnUpVote(true);
         RedditPostDataHelper.getSharedInstance().getRedditPostArrayList().add(redditPostModel);
         setResult(100);
         finish();

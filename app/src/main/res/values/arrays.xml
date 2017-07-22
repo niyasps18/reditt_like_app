@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="initial_list_body_data">
+
+        <item>This is test post 1</item>
+        <item>This is test post 2</item>
+        <item>This is test post 3</item>
+        <item>This is test post 4</item>
+        <item>This is test post 5</item>
+        <item>This is test post 6</item>
+        <item>This is test post 7</item>
+        <item>This is test post 8</item>
+        <item>This is test post 9</item>
+        <item>This is test post 10</item>
+
+    </array>
+</resources>
