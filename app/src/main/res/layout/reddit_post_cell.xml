@@ -99,6 +99,7 @@
             android:text="24k"/>
 
         <ImageView
+            android:id="@+id/up_vote_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"

@@ -12,6 +12,34 @@ public class RedditPostModel implements Serializable {
     private String postBody;
     private Date date;
     private String community;
+    private long upVotes = 1;
+    private long downVotes;
+
+    public long getUpVotes() {
+        return upVotes;
+    }
+
+    public void setUpVotes(long upVotes) {
+        this.upVotes = upVotes;
+    }
+
+    public long getDownVotes() {
+        return downVotes;
+    }
+
+    public void setDownVotes(long downVotes) {
+        this.downVotes = downVotes;
+    }
+
+    public boolean isLastAnUpVote() {
+        return isLastAnUpVote;
+    }
+
+    public void setLastAnUpVote(boolean lastAnUpVote) {
+        isLastAnUpVote = lastAnUpVote;
+    }
+
+    private boolean isLastAnUpVote = true;
 
     public String getTitle() {
         return title;

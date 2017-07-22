@@ -38,8 +38,6 @@ public class HomeActivity extends BaseActivity {
         setContentView(R.layout.activity_home);
         unbinder = ButterKnife.bind(this);
         setSupportActionBar(toolbar);
-//        getSupportActionBar().setHomeButtonEnabled(true);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         pageHeaderTextView.setText("Reddit Home");
         redditPostsRecyclerViewAdapter = new RedditPostsRecyclerViewAdapter(this);
         linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);

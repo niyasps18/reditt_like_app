@@ -6,4 +6,5 @@ package com.niyas.redditlikeapp.helpers;
 
 public interface RedditConstants {
     String DATE_FORMAT = "MMM dd, yyyy";
+    String POST_DATE_FORMAT = "yyyy/MM/dd";
 }

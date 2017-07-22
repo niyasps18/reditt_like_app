@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.niyas.redditlikeapp.R;
 import com.niyas.redditlikeapp.adapters.viewholder.RedditPostViewHolder;
+import com.niyas.redditlikeapp.helpers.RedditPostDataHelper;
 import com.niyas.redditlikeapp.models.RedditPostModel;
 
 import java.util.ArrayList;
@@ -34,8 +35,24 @@ public class RedditPostsRecyclerViewAdapter extends RecyclerView.Adapter<RedditP
     }
 
     @Override
-    public void onBindViewHolder(RedditPostViewHolder holder, int position) {
-        holder.bindViews(redditPostModels.get(position));
+    public void onBindViewHolder(RedditPostViewHolder holder, final int position) {
+        holder.bindViews(context,redditPostModels.get(position));
+        holder.downVoteImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RedditPostDataHelper.getSharedInstance().downVoted(position);
+                notifyDataSetChanged();
+
+            }
+        });
+
+        holder.upVoteImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RedditPostDataHelper.getSharedInstance().upVoted(position);
+                notifyDataSetChanged();
+            }
+        });
     }
 
     @Override
@@ -45,6 +62,7 @@ public class RedditPostsRecyclerViewAdapter extends RecyclerView.Adapter<RedditP
 
     public void updateDataSet(ArrayList<RedditPostModel> redditPostModels) {
         this.redditPostModels = redditPostModels;
+        RedditPostDataHelper.getSharedInstance().sortByUpVotes();
         notifyDataSetChanged();
     }
 }
