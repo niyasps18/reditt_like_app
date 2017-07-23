@@ -84,6 +84,7 @@ public class RedditPostDataHelper {
     public ArrayList<RedditPostModel> populateInitialListData(Context context){
         for(int i = 0 ;i<25; i++){
             RedditPostModel redditPostModel = new RedditPostModel();
+            redditPostModel.setTitle(context.getResources().getStringArray(R.array.initial_list_title_data)[i]);
             redditPostModel.setPostBody(context.getResources().getStringArray(R.array.initial_list_body_data)[i]);
             Random random = new Random();
             int upVote = random.nextInt(15);

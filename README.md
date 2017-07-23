@@ -1,4 +1,12 @@
-"# RedditLikeApp v1.0"
+App Quick Details
+------------------
+Name: RedditLikeApp
+Version: 1.0
+Author: Niyas Sajjad
+Minimum SDK API level: 21 (Lollipop and above)
+
+-------------------------------------------------------------------
+
 RedditLikeApp is a very basic level clone of the real Reddit app. The app includes the functionalities defined in the
 coding challenge document.
 
@@ -21,6 +29,9 @@ The post list is sorted based of upvotes. The post with highest number of upvote
 The list shows the time since something is posted. The list displays "now" if the post is shared less than a minute ago.
 Since the assumption is that the app on a particular device has a single user, "me" is displayed as username on each post.
 
+When the user scrolls and reaches the bottom of the list, more data is loaded. This seems to be a more scalable model than
+just showing a limitted number of posts all the time.
 
+Upon clicking the downvote/upvote button the list will get instantly sorted if necessary.
 
 --------------------------------------------------------------------------------------------------------------------------------

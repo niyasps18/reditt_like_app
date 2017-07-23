@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <array name="initial_list_title_data">
+        <item>This is test post title 1</item>
+        <item>This is test post title 2</item>
+        <item>This is test post title 3</item>
+        <item>This is test post title 4</item>
+        <item>This is test post title 5</item>
+        <item>This is test post title 6</item>
+        <item>This is test post title 7</item>
+        <item>This is test post title 8</item>
+        <item>This is test post title 9</item>
+        <item>This is test post title 10</item>
+        <item>This is test post title 11</item>
+        <item>This is test post title 12</item>
+        <item>This is test post title 13</item>
+        <item>This is test post title 14</item>
+        <item>This is test post title 15</item>
+        <item>This is test post title 16</item>
+        <item>This is test post title 17</item>
+        <item>This is test post title 18</item>
+        <item>This is test post title 19</item>
+        <item>This is test post title 20</item>
+        <item>This is test post title 21</item>
+        <item>This is test post title 22</item>
+        <item>This is test post title 23</item>
+        <item>This is test post title 24</item>
+        <item>This is test post title 25</item>
+
+
+    </array>
     <array name="initial_list_body_data">
 
         <item>This is test post 1</item>
