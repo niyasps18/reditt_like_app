@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.niyas.redditlikeapp.R;
 import com.niyas.redditlikeapp.helpers.RedditPostDataHelper;
@@ -40,6 +41,10 @@ public class RedditMakePostActivity extends BaseActivity {
 
     @OnClick(R.id.post_txt_view)
     public void onPostClicked(){
+        if(titleEditText.getText().toString().trim().equals("") || bodyEditText.getText().toString().equals("")){
+            Toast.makeText(this,"Please enter title and body of the post",Toast.LENGTH_LONG).show();
+            return;
+        }
         postAndUpdateList();
     }
 
