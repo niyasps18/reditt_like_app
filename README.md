@@ -8,7 +8,8 @@ The app preloads 10 posts on a fresh launch. Initially the upvotes/downvotes of 
 upvote or downvote the posts from the given list any number of time. The app assumes that only a single user uses the app
 on a device. So if a user upvotes twice and downvotes once, then the total upvotes will be 1. The last vote that the user
 performed will be highlighted. That means, if the user upvotes twice and then downvote once, the downward arrow will be
-highlighted as the users last vote was a downvote.
+highlighted as the users last vote was a downvote. If the user downvotes while the total number of votes is zero, the the
+app displays -1 for the vote count which is the effective vote count for that post.
 
 The user can add a new post by clicking the add floating button present at the bottom right of the home page. The user
 will be asked to enter a title and a body for the post, both of which are mandatory fields.
