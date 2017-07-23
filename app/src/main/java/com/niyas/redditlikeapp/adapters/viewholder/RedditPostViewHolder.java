@@ -40,7 +40,13 @@ public class RedditPostViewHolder extends RecyclerView.ViewHolder {
     public void bindViews(Context context,RedditPostModel redditPostModel) {
         titleTextView.setText(redditPostModel.getTitle());
         bodyTextView.setText(redditPostModel.getPostBody());
-        voteCountTextView.setText(String.valueOf(redditPostModel.getUpVotes()));
+        if(redditPostModel.getUpVotes()>0) {
+            voteCountTextView.setText(String.valueOf(redditPostModel.getUpVotes()));
+        }else if(redditPostModel.getUpVotes() == 0 && redditPostModel.getDownVotes() == 0){
+            voteCountTextView.setText(String.valueOf(redditPostModel.getUpVotes()));
+        }else if(redditPostModel.getDownVotes()<0){
+            voteCountTextView.setText(String.valueOf(redditPostModel.getDownVotes()));
+        }
         timeTextView.setText(RedditUtility.getPostDateString(redditPostModel));
         // The last vote is always highlighted. That is if the user's last vote is a down vote, the down arrow is highlighted
         if(redditPostModel.isLastAnUpVote() == null){

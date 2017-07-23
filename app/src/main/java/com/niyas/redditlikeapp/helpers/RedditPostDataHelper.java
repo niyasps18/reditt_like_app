@@ -40,16 +40,25 @@ public class RedditPostDataHelper {
 
     public void upVoted(int position) {
         redditPostArrayList.get(position).setLastAnUpVote(true);
-        redditPostArrayList.get(position).setUpVotes(redditPostArrayList.get(position).getUpVotes() + 1);
+        if(redditPostArrayList.get(position).getDownVotes()<0){
+            redditPostArrayList.get(position).setDownVotes(redditPostArrayList.get(position).getDownVotes() + 1);
+            redditPostArrayList.get(position).setUpVotes(redditPostArrayList.get(position).getUpVotes() + 1);
+        }else {
+            redditPostArrayList.get(position).setUpVotes(redditPostArrayList.get(position).getUpVotes() + 1);
+        }
         sortByUpVotes();
     }
 
     public void downVoted(int position) {
         redditPostArrayList.get(position).setLastAnUpVote(false);
-        redditPostArrayList.get(position).setDownVotes(redditPostArrayList.get(position).getDownVotes() + 1);
+
         //comment this if number of upvotes need not to be reduced as the user down votes
         if (redditPostArrayList.get(position).getUpVotes() > 0) {
             redditPostArrayList.get(position).setUpVotes(redditPostArrayList.get(position).getUpVotes() - 1);
+
+        }else{
+            redditPostArrayList.get(position).setDownVotes(redditPostArrayList.get(position).getDownVotes() - 1);
+            redditPostArrayList.get(position).setUpVotes(redditPostArrayList.get(position).getDownVotes());
         }
         sortByUpVotes();
     }
