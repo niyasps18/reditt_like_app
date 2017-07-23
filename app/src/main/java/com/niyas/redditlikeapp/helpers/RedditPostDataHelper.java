@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.Random;
 
 /**
  * Created by Niyas Sajjad on 20-Jul-17.
@@ -81,10 +82,12 @@ public class RedditPostDataHelper {
     }
 
     public ArrayList<RedditPostModel> populateInitialListData(Context context){
-        for(int i = 0 ;i<10; i++){
+        for(int i = 0 ;i<25; i++){
             RedditPostModel redditPostModel = new RedditPostModel();
             redditPostModel.setPostBody(context.getResources().getStringArray(R.array.initial_list_body_data)[i]);
-            redditPostModel.setUpVotes(0);
+            Random random = new Random();
+            int upVote = random.nextInt(15);
+            redditPostModel.setUpVotes(upVote);
             redditPostModel.setDownVotes(0);
             redditPostModel.setDate(new Date());
             redditPostArrayList.add(redditPostModel);

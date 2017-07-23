@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class RedditPostsRecyclerViewAdapter extends RecyclerView.Adapter<RedditPostViewHolder> {
     private Context context;
     private ArrayList<RedditPostModel> redditPostModels = new ArrayList<>(1);
+    private int displaySize = 0;
 
     public RedditPostsRecyclerViewAdapter(Context context) {
         this.context = context;
@@ -57,12 +58,22 @@ public class RedditPostsRecyclerViewAdapter extends RecyclerView.Adapter<RedditP
 
     @Override
     public int getItemCount() {
-        return redditPostModels.size();
+        if(displaySize > redditPostModels.size()) {
+            return redditPostModels.size();
+        }
+        else {
+            return displaySize;
+        }
     }
 
     public void updateDataSet(ArrayList<RedditPostModel> redditPostModels) {
         this.redditPostModels = redditPostModels;
         RedditPostDataHelper.getSharedInstance().sortByUpVotes();
+        notifyDataSetChanged();
+    }
+
+    public void setDisplaySize(int displaySize){
+        this.displaySize = displaySize;
         notifyDataSetChanged();
     }
 }
