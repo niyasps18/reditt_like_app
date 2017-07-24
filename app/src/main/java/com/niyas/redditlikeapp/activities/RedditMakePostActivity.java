@@ -1,6 +1,7 @@
 package com.niyas.redditlikeapp.activities;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -57,5 +58,15 @@ public class RedditMakePostActivity extends BaseActivity {
         RedditPostDataHelper.getSharedInstance().getRedditPostArrayList().add(redditPostModel);
         setResult(100);
         finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return true;
     }
 }

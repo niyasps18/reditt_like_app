@@ -35,3 +35,8 @@ just showing a limitted number of posts all the time.
 Upon clicking the downvote/upvote button the list will get instantly sorted if necessary.
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+Test using Espresso
+-------------------
+Tests for Floating action button click and creating a post are added using espresso.
+--------------------------------------------------------------------------------------------------------------------------------
